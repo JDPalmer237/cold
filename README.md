@@ -1,2 +1,2 @@
 # cold
-Text based web game
+Text based web game (in progress)

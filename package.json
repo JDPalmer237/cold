@@ -1,0 +1,24 @@
+{
+  "name": "cold",
+  "version": "1.0.0",
+  "description": "text based web game",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JDPalmer237/cold.git"
+  },
+  "author": "John Palmer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JDPalmer237/cold/issues"
+  },
+  "homepage": "https://github.com/JDPalmer237/cold#readme",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  }
+}
