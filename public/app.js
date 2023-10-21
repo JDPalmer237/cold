@@ -7,18 +7,20 @@ const edgeCases = [
 ]
 const storyContinues = ["The story continues..."]
 
-userInput.addEventListener('keydown', (e) => {
-    if (e.key == 'Enter') {
-        for (let i = 0; i < edgeCases.length; i++) {
-            if (userInput.value.includes(edgeCases[progress][i])) {
-                setTimeout(function(){insertLine(edgeCases[progress][i])}, 1000)
-                setTimeout(function(){insertLine(storyContinues[progress])}, 2000)
-                // progress++;
+if (userInput) {
+    userInput.addEventListener('keydown', (e) => {
+        if (e.key == 'Enter') {
+            for (let i = 0; i < edgeCases.length; i++) {
+                if (userInput.value.includes(edgeCases[progress][i])) {
+                    setTimeout(function(){insertLine(edgeCases[progress][i])}, 1000)
+                    setTimeout(function(){insertLine(storyContinues[progress])}, 2000)
+                    progress++;
+                }
             }
+            userInput.value = "";
         }
-        userInput.value = "";
-    }
-});
+    });
+}
 
 function insertLine(line) {
     const newElement = document.createElement("p");

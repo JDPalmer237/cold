@@ -1,4 +1,4 @@
-p { animation: fadeIn 5s; }
+.story p { animation: fadeIn 8s; }
 
 @keyframes fadeIn {
     0% { opacity: 0; }
