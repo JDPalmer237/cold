@@ -21,7 +21,6 @@ router.post('/', (req, res) => {
     if (req.body.password != req.body.confirmPassword) {
         return res.render("message", { message: "Password error", subMessage: "Please make sure your passwords match.", redirect: "register" });
     }
-
     // Open DB
     const db = new sqlite3.Database('./cold.db', sqlite3.OPEN_READWRITE, (err) => {
         if (err) return console.error(err.message);
@@ -35,7 +34,7 @@ router.post('/', (req, res) => {
             });
             return res.render("message", { message: "Username already exists", subMessage: "Please provide a different username.", redirect: "register" });
         } else {
-            // If username doesn't exist - hash password and add user to DB
+            // If username doesn't exist - hash password and add user to cold.DB
             bcrypt.hash(req.body.password, 10).then(function(hash){
                 db.run("INSERT INTO users (username, password) VALUES (?, ?)", [username, hash], (function (err) {
                     if (err) return console.error(err.message);

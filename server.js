@@ -8,8 +8,9 @@ const PORT = 3000;
 const db = new sqlite3.Database('./cold.db', sqlite3.OPEN_READWRITE, (err) => {
     if (err) return console.error(err.message);
 });
-// Check table exists. If not create one in cold.db
+// Check tables exist. If not create them in cold.db
 db.run("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY NOT NULL, username TEXT NOT NULL, password TEXT NOT NULL)");
+// db.run("CREATE TABLE IF NOT EXISTS progress (user_id INTEGER NOT NULL, story_path TEXT NOT NULL, key_items TEXT NOT NULL, FOREIGN KEY(user_id) REFERENCES users(id))");
 // Close connection to DB
 db.close((err) => {
     if (err) return console.error(err.message);
