@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const sqlite3 = require('sqlite3').verbose();
 const session = require('express-session');
-const PORT = 3000;
+const PORT =8080;
 
 // Connect to DB
 const db = new sqlite3.Database('./cold.db', sqlite3.OPEN_READWRITE, (err) => {

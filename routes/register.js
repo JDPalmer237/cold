@@ -15,7 +15,7 @@ router.post('/', (req, res) => {
         return res.render("message", { message: "Username too short!", subMessage: "Please provide a username between 4-16 characters.", redirect: "register" });
     }
     // Check Password
-    if (req.body.password.length <= 8 || req.body.password.length >= 16 || req.body.password != req.body.confirmPassword) {
+    if (req.body.password.length <= 8 || req.body.password.length >= 16) {
         return res.render("message", { message: "Password error", subMessage: "Please provide a password between 8-16 characters.", redirect: "register"});
     }
     if (req.body.password != req.body.confirmPassword) {

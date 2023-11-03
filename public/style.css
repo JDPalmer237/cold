@@ -1,6 +1,6 @@
-/* input { 
-  animation: fadeIn 4s;
- }
+/* .currentScenario, .userInput { 
+  animation: fadeIn 3s;
+}
 
 @keyframes fadeIn {
     0% { opacity: 0; }
